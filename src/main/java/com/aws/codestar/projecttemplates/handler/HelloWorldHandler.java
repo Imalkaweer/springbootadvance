@@ -5,6 +5,8 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import com.aws.codestar.projecttemplates.GatewayResponse;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +16,7 @@ import java.util.Map;
  */
 public class HelloWorldHandler implements RequestHandler<Object, Object> {
 
+    private static final Logger logger = LoggerFactory.getLogger(HelloWorldHandler.class);
     public Object handleRequest(final Object input, final Context context) {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
